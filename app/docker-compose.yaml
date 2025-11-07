@@ -1,0 +1,33 @@
+name: todo-list-manager
+  
+services:
+  db:
+    container_name: list-db  
+    image: mysql:8.0
+    env_file: .env
+    networks:
+      - todo-list-net
+    volumes:
+      - list-db:/var/lib/mysql
+    healthcheck:
+      test: mysql --user=root --password=password --execute="SHOW DATABASES;"
+      interval: 10s
+    
+  app:
+    container_name: list-app
+    image: isaiaslafon/todo-list-manager:v0.2
+    env_file: .env
+    depends_on:
+      - list-db
+    networks:
+      - todo-list-net
+    ports:
+      - 8080:3000
+
+
+networks:
+  todo-list-net:
+     driver: bridge
+
+volumes:
+  list-db
