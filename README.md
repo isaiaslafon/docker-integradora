@@ -314,7 +314,12 @@ En la aplicación también es posible setear variables de entorno para parametri
     ```
 - **5.3)** Iniciar el _contenedor de base de datos_ utilizando el comando `docker run` y enviando las variables de entorno necesarias.
     ```bash
-    docker run
+    # Parametros nuevos:
+    # "--net" todo-net ## Indica la red que va a utilizar el contenedor.
+    # "-v list-db:/var/lib/mysql/" ## Para salvar la base de mysql.
+    # "-e MYSQL_ROOT_PASSWORD="easy" -e MYSQL_DATABASE="list"" define las 2 variables de entorno, se prodía haber indicado un archivo para que utilice varias.
+
+    docker run --rm -d --name todo-list-db --net todo-net -v list-db:/var/lib/mysql/ -e MYSQL_ROOT_PASSWORD="easy" -e MYSQL_DATABASE="list" mysql:8.0 
     ```
 - **5.4)** Iniciar el _contenedor de la aplicación_ utilizando el comando `docker run` enviando las variables de entornos necesarias para la conexión con la base de datos.
     ```bash
