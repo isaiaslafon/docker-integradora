@@ -103,7 +103,7 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
 
 - **1.1)** Ejecute el comando correspondiente para buildear la imagen. Elija un nombre de imagen y un tag acorde. 
     ```bash
-    # docker build -t todo-list-manager:v0.1 .
+    docker build -t todo-list-manager:v0.1 .
     ```
 - **1.2)** ¿Qué espacio ocupa la imagen una vez creada?
     ```bash
@@ -134,15 +134,28 @@ Una vez creada la imágen, debería ser capaz de correr la aplicación.
 
 - **1.4)** Ejecute un comando para poder correr la aplicación.
     ```bash
-    # Escriba acá el comando
+    docker run --rm -d -p 8080:3000 --name todo-list todo-list-manager:v0.1
     ```
 - **1.5)** Explique el comando de la respuesta anterior y cada parámetro enviado.
     ```bash
-    # Escriba la explicación
+    # --rm para borrar el contenedor al frenarlo porque es de prueba.
+    # -d (detach) para que no se cierre si se cierra la terminal o se termina el comando.
+    # -p para asignar el puerto a usar, no alcanza con el EXPOSE del Dockerfile.
+    # --name para poner un nombre y no usar uno genérico o el ID del container al operar.
+    # se utilizó la imagen construida que se encuentra localmente en docker.
     ```
 - **1.6)** ¿Cómo puede saber si el contenedor está corriendo?
     ```bash
-    # Escriba acá el comando
+    # Existen varias maneras.
+
+    # Muestra los contenedores, en "STATUS" NO va a decir "Exited".
+    docker ps -a  
+
+    # Muestra solo los que están corriendo, en "STATUS" NO va a decir "Exited".
+    docker ps  
+
+    # Va a mostrar en tiempo real el uso de memoria, cpu, etc.
+    docker stats todo-list
     ```
 - **1.7)** Adjunte una captura de pantalla con la aplicación funcionando con la URL utilizada para acceder. Reemplace la imágen siguiente por su captura de pantalla.
     ![](./imgs/broken_img.png)
