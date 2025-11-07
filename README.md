@@ -31,9 +31,9 @@ En el presente trabajo integrador se evaluará:
 
 Se proponen dos formas de entrega:
 
-1) [Forkear](https://github.com/kity-linuxero/docker-integradora/fork) el presente repositorio y completar este archivo `README.md` donde lo pida, incluyendo capturas de pantalla. Luego enviar la URL del repo por mail. (Recomendado si está familiarizado con Git, Github y Markdown).
+- [x] - 1) [Forkear](https://github.com/kity-linuxero/docker-integradora/fork) el presente repositorio y completar este archivo `README.md` donde lo pida, incluyendo capturas de pantalla. Luego enviar la URL del repo por mail. (Recomendado si está familiarizado con Git, Github y Markdown).
 
-2) Completar cada uno de los puntos solicitados en el presente documento en este <a href="./DOCKER_TPFINAL_2025.txt" download> archivo `.txt` </a> y enviarlo por e-mail a cgiambruni@gmail.com en un archivo `zip` con las capturas de pantalla solicitadas y el archivo `compose.yml` por e-mail. El archivo zip debe llamarse `APELLIDO.NOMBRE.zip`.
+- [ ] - 2) Completar cada uno de los puntos solicitados en el presente documento en este <a href="./DOCKER_TPFINAL_2025.txt" download> archivo `.txt` </a> y enviarlo por e-mail a cgiambruni@gmail.com en un archivo `zip` con las capturas de pantalla solicitadas y el archivo `compose.yml` por e-mail. El archivo zip debe llamarse `APELLIDO.NOMBRE.zip`.
 
 
 
@@ -103,7 +103,7 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
 
 - **1.1)** Ejecute el comando correspondiente para buildear la imagen. Elija un nombre de imagen y un tag acorde. 
     ```bash
-    # Escriba acá el comando utilizado
+    # docker build 
     ```
 - **1.2)** ¿Qué espacio ocupa la imagen una vez creada?
     ```bash
