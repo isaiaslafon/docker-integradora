@@ -379,7 +379,7 @@ docker compose up -d
 Cambie la imágen del `docker compose` para que tome como origen la imágen que ha subido a Docker Hub con su usuario.
 
 **ENTREGABLE**
-- **6.1)** Suba el archivo docker compose en este repositorio en la carpeta raíz o adjunte en el `.zip`. El compose debe realizar todo lo necesario para que la aplicación levante con solo ejecutar `docker compose up`. Para probar si realmente funciona correctamente, puede probar su compose en [Play With Docker](https://labs.play-with-docker.com)
+- [x] - **6.1)** Suba el archivo docker compose en este repositorio en la carpeta raíz o adjunte en el `.zip`. El compose debe realizar todo lo necesario para que la aplicación levante con solo ejecutar `docker compose up`. Para probar si realmente funciona correctamente, puede probar su compose en [Play With Docker](https://labs.play-with-docker.com)
 
 --------------
 
