@@ -30,4 +30,4 @@ networks:
      driver: bridge
 
 volumes:
-  list-db
+  list-db:
