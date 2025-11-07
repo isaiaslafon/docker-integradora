@@ -189,11 +189,25 @@ La actualización del código recientemente realizada deja obsoleta la antigua v
 
 - **2.2)** Elimine la imágen y el contenedor hecho en el punto anterior: Mostrar comandos utilizados.
     ```bash
-    # Escriba acá el comando utilizado
+    # PARA EL CONTENEDOR
+    # Si al correr se utilizó --rm con frenar el contenedor ya se eliminaria.
+    docker stop todo-list
+
+    # Si no se debe explicitar pero debe estar frenado o frozar la eliminación del mismo.
+    docker stop todo-list
+    docker rm todo-list
+
+    # Se puede forzar en un solo comando.
+    docker rm todo-list -f
+
+    # PARA LA IMAGEN
+    docker image rm todo-list-manager:v0.1
+    # ¡No debe haber contenedores corriendo que la utilicen u otras imagenes en las que se base!
+     
     ```
 - **2.3)** ¿Como puede listar las imágenes para comprobar que se ha eliminado la imagen del punto anterior?
     ```bash
-    # Escriba acá el comando utilizado
+    docker image ls
     ```
 
 
