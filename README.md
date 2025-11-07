@@ -158,7 +158,8 @@ Una vez creada la imágen, debería ser capaz de correr la aplicación.
     docker stats todo-list
     ```
 - **1.7)** Adjunte una captura de pantalla con la aplicación funcionando con la URL utilizada para acceder. Reemplace la imágen siguiente por su captura de pantalla.
-    ![](./imgs/running-app.png)
+
+     ![](./imgs/running-app.png)
    
 
 ## Parte 2 - Actualizar aplicación
