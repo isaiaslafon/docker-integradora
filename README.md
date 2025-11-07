@@ -159,7 +159,7 @@ Una vez creada la imágen, debería ser capaz de correr la aplicación.
     ```
 - **1.7)** Adjunte una captura de pantalla con la aplicación funcionando con la URL utilizada para acceder. Reemplace la imágen siguiente por su captura de pantalla.
 
-     ![](./imgs/running-app.png)
+     ![running app screnshoot web interface](./imgs/running-app.png)
    
 
 ## Parte 2 - Actualizar aplicación
@@ -244,7 +244,25 @@ Los datos en esta APP se guardan en un archivo `/etc/todos/todo.db`.
 
 - **4.1)** Escriba los comandos necesarios para persistir la base de datos. Decida que tipo de persistencia es la adecuada para su app ([Bind mounts](https://docker.idepba.com.ar/clase5.html#/bind_mounts) o [volumes](https://docker.idepba.com.ar/clase5.html#/volumes))
     ```bash
-    # Escriba el comando necesario
+    # Se decidió utilizar volumen en vez de mounts porque no requería editar o alojar o usar un archivo previo ubicado en el disco.
+
+    # SE PUEDE CREAR EL VOLUMEN EN UN UNICO COMANDO RUN.
+
+    ## Simple:
+    ## - puerto local 8080-
+    ## - "-v" para crear el volumen del directorio de la db.
+    docker run -p 8080:3000 -v lista-db:/etc/todos/ isaiaslafon/todo-list-manager:v0.2
+
+    ## Compleja:
+    ## - "--rm" para que se borre al frenar el contenedor.
+    ## - "--name" para darle un nombre adecuado al contenedor y no requerir el id o ver que nombre se le asigno automático.
+    docker run --rm --name todo-list -p 8080:3000 -v lista-db:/etc/todos/ isaiaslafon/todo-list-manager:v0.2
+
+    # OTRA FORMA SERÍA CREAR EL VOLUMEN PRIMERO Y LUEGO UTILIZARLO.
+    docker volume create lista-db
+    docker run --rm --name todo-list -p 8080:3000 -v lista-db:/etc/todos/ isaiaslafon/todo-list-manager:v0.2
+
+    # (Esto se podría también resolver con un compose que cree el volumen y lo utilice al crear el servicio)
     ```
 
 
