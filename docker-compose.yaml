@@ -11,12 +11,7 @@ services:
       - todo-list-net
     volumes:
       - list-db:/var/lib/mysql
-    restart: always
-    healthcheck:
-      test: mysql --user=root --password=${MYSQL_ROOT_PASSWORD} --execute="SHOW DATABASES;"
-      interval: 1s
-
-    
+        
   app:
     container_name: list-app
     image: isaiaslafon/todo-list-manager:v0.2
@@ -26,14 +21,12 @@ services:
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
       - MYSQL_DB=${MYSQL_DB}
     depends_on:
-      db:
-        condition: service_healthy
+      - db
     networks:
       - todo-list-net
     ports:
       - 8080:3000
     restart: always
-
 
 networks:
   todo-list-net:
