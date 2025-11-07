@@ -306,15 +306,15 @@ En la aplicación también es posible setear variables de entorno para parametri
 
 - **5.1)** [Crear una red](https://docker.idepba.com.ar/clase4.html#/network_create) para conexión entre los contenedores que servirá también para conectar a la aplicación.
     ```bash
-    # Escriba acá el comando utilizado
+   docker network create todo-list-net
     ```
 - **5.2)** [Crear un nuevo volumen](https://docker.idepba.com.ar/clase5.html#/volume_create) para persistir los datos de la base MySQL. El path donde se almacenan los datos en el contenedor MySQL es `/var/lib/mysql`.
     ```bash
-    # Escriba acá el comando utilizado
+    docker volume create list-db
     ```
 - **5.3)** Iniciar el _contenedor de base de datos_ utilizando el comando `docker run` y enviando las variables de entorno necesarias.
     ```bash
-    # Escriba acá el comando utilizado
+    docker run
     ```
 - **5.4)** Iniciar el _contenedor de la aplicación_ utilizando el comando `docker run` enviando las variables de entornos necesarias para la conexión con la base de datos.
     ```bash
