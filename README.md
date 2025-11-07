@@ -103,16 +103,24 @@ Antes de poder correr la aplicación, necesitamos obtener el código fuente y de
 
 - **1.1)** Ejecute el comando correspondiente para buildear la imagen. Elija un nombre de imagen y un tag acorde. 
     ```bash
-    # docker build 
+    # docker build -t todo-list-manager:v0.1 .
     ```
 - **1.2)** ¿Qué espacio ocupa la imagen una vez creada?
     ```bash
-    # Espacio utilizado
+    # 177MB
     ```
 - **1.3)** ¿Puede hacer algo para optimizar o mejorar la imagen?. Describa qué modificaciones puede hacer para optimizar la imagen.
-    ```bash
-    # Describa que podría hacer para mejorar u optimizar la creación de la imágen.
-    ```
+    ```yaml
+    # Comenzar con el working dir y copiar por un lado, luego en un solo RUN que baje e instalar las dependencias necesarias (Dockerfile modificado)
+    Esto reduce el uso de varios RUN que generan imagenes intermedias: En vez de:
+     RUN cosas ...
+     RUN mas cosas ...
+
+     RUN cosas ... && \
+         #oara poder conservar comentarios en el lugar adecuado.
+         mas cosas ...     
+
+   ```
 
 
 > [!TIP]
