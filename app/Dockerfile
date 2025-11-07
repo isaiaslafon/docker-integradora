@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Actualizamos los paquetes e instalamos Node.js y Yarn directamente desde los repositorios oficiales
-RUN apk add --no-cache nodejs yarn \
+RUN apk add --no-cache nodejs yarn && \ 
 # Instalamos las dependencias del proyecto
     yarn install --production
 
